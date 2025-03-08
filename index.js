@@ -7,8 +7,22 @@ app.use(express.json());
 app.use(cors());
 
 
-let feedbacks = [];
-let feedbackId = 1; // Auto-increment ID
+let feedbacks = [{
+  "feedbackId":1,
+      "email": "study.trigger@example.com",
+      "feedback": "Great platform! Very user-friendly.",
+      "rating": 5,
+      "status": "approved",
+      "approvalDate": "2025-03-06T10:15:30Z"
+    },
+    {"feedbackId":2,
+      "email": "trigger.study@example.com",
+      "feedback": "The response time can be improved.",
+      "rating": 3,
+      "status": "pending",
+      "approvalDate": null
+    },];
+let feedbackId = 3; // Auto-increment ID
 
 app.post("/feedback", (req, res) => {
   const { email, feedback, rating } = req.body;
